@@ -40,7 +40,14 @@ class Solution {
             // finishes that instance and [3,3] instance moves past the backtrack and to comb.remove last to [3]
             // where it when continues to increment ints for loop testng 4,5, adding [3,5]  loop exists, [3] becomes [], etc.
         }
-    }
+    }// taking a look at this again, using example of if sum is 4 and the first int in candidates[] is '1'. in the for loop,
+    // 'i' is only incremented once a base case found, otherwise 1 is contiinually passed as index in new recursion.
+    // eventually we will get to 4th call where 4 1's = 4 so remain 0. returns back to the prior call on the stack and
+    // removes 1 from [1,1,1,1] to [1,1,1] and then the loop continues on the same recursivbe call with i = 1. we then
+    // test all ints at [1,1,1,X] and reach either base case. ultimately we progress further and further back [1,1,X,X] etc.
+    // until we increment the for loop 'i' in the very first method call and repeat the whole process starting frmo index 1
+    // on first call. new start index is passed though so we never travser backwards to elements precidng candidates[i]
+
 
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> results = new ArrayList<List<Integer>>(); // this will store final answer which is a list of
