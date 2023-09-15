@@ -46,7 +46,7 @@ class Solution {
     // removes 1 from [1,1,1,1] to [1,1,1] and then the loop continues on the same recursivbe call with i = 1. we then
     // test all ints at [1,1,1,X] and reach either base case. ultimately we progress further and further back [1,1,X,X] etc.
     // until we increment the for loop 'i' in the very first method call and repeat the whole process starting frmo index 1
-    // on first call. new start index is passed though so we never travser backwards to elements precidng candidates[i]
+    // on first call. new start index is passed though so we never travser backwards to elements precidng candidates[i].
 
 
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
